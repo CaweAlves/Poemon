@@ -1,48 +1,23 @@
 package com.cawe.poemon.model;
 
-import java.text.DecimalFormat;
+import com.cawe.poemon.enums.TypeEnum;
+import lombok.Getter;
 
+import java.math.BigDecimal;
+
+@Getter
 public class Poemon {
     private String name;
-    private String Type;
+    private TypeEnum type;
     private String Color;
     private int Level;
-    private DecimalFormat xp;
-    private DecimalFormat nextLevel;
-
-    public int getLevel() {
-        return Level;
-    }
-
-    public DecimalFormat getXp() {
-        return xp;
-    }
-
-    public DecimalFormat getNextLevel() {
-        return nextLevel;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return Type;
-    }
-
-    public void setType(String type) {
-        Type = type;
-    }
-
-    public String getColor() {
-        return Color;
-    }
+    private BigDecimal xp;
+    private BigDecimal nextLevel;
+    public void setName(String name) {this.name = name;}
 
     public void setColor(String color) {
         Color = color;
     }
+
+    public void setType(TypeEnum type) {this.type = type;}
 }
