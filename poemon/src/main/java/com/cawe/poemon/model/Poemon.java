@@ -15,16 +15,12 @@ public class Poemon implements ModelInterface{
     private Integer id;
     private String name;
     private TypeEnum type;
-    private String Color;
+    private String color;
     private int level;
     private BigDecimal xp;
     private BigDecimal nextLevel;
+    
     public void setName(String name) {this.name = name;}
-
-    public void setColor(String color) {
-        Color = color;
-    }
-
+    public void setcolor(String color) {this.color = color;}
     public void setType(TypeEnum type) {this.type = type;}
-
 }
