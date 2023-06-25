@@ -1,13 +1,19 @@
 package com.cawe.poemon.service;
 
-import com.cawe.poemon.DAO.UserDAO;
-import org.springframework.http.HttpStatus;
+import com.cawe.poemon.model.User;
+import com.cawe.poemon.repositories.UserRepostory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    public HttpStatus VerifyUserCredentials(String email, String password) {
-        return new UserDAO().isUserValid(email, password) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;
+    final UserRepostory userRepository;
+
+    public UserService(UserRepostory userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public User save(User user){
+        return userRepository.save(user);
     }
 }
