@@ -16,8 +16,7 @@ public class AuthService {
     }
 
     public HttpStatus VerifyUserCredentials(User user) {
-        ExampleMatcher modelMatcher = ExampleMatcher.matching()
-                .withIgnorePaths("id");
+        ExampleMatcher modelMatcher = ExampleMatcher.matching();
         Example<User> userExample = Example.of(user, modelMatcher);
         return userRepository.exists(userExample) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;
     }
